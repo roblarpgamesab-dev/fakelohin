@@ -1,14 +1,43 @@
 {
-	"geode": "4.0.0",
-	"gd": {
-		"win": "2.2074",
-		"android": "2.2074",
-		"mac": "2.2074",
-		"ios": "2.2074"
-	},
-	"id": "yourname.fake-login",
-	"name": "Fake Login",
-	"version": "v1.0.0",
-	"developer": "yourname",
-	"description": "A joke login screen with a fake username and password. Nothing is saved or sent anywhere."
+    "geode": "6.0.0",
+    "gd": {
+        "win": "2.2091",
+        "android": "2.2091",
+        "mac": "2.2091",
+        "ios": "2.2091"
+    },
+    "id": "yourname.fake-login",
+    "name": "Fake Login (RopTop Edition)",
+    "version": "v1.0.0-beta.roptop",
+    "developer": "YourName & RopTop (trust)",
+    "description": "100% real RopTop login mod with fake Moderator badge. Beta build for Geode v6.0.0 and GD 2.2091.",
+    "issues": {
+        "info": "Report bugs from this beta build on GitHub Issues.",
+        "url": "https://github.com"
+    },
+    "tags": [
+        "joke",
+        "utility",
+        "interface"
+    ],
+    "settings": {
+        "show-beta-watermark": {
+            "name": "Show Beta Watermark",
+            "description": "Displays the current beta build version in the bottom-right corner of the main menu.",
+            "type": "bool",
+            "default": true
+        },
+        "fake-mod-badge": {
+            "name": "Fake Mod Badge",
+            "description": "Adds a fake Geometry Dash Moderator badge next to your profile name.",
+            "type": "string",
+            "default": "Elder Mod",
+            "one-of": [
+                "None",
+                "Mod",
+                "Elder Mod",
+                "Leaderboard Mod"
+            ]
+        }
+    }
 }
