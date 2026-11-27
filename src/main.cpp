@@ -1,16 +1,19 @@
 #include <Geode/Geode.hpp>
+#include <Geode/ui/Popup.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/modify/ProfilePage.hpp>
 
 using namespace geode::prelude;
 
 // A joke login popup. It does NOT save, store, or send anything anywhere.
-class FakeLoginPopup : public Popup<> {
+class FakeLoginPopup : public geode::Popup {
 protected:
     TextInput* m_userInput = nullptr;
     TextInput* m_passInput = nullptr;
 
-    bool setup() override {
+    bool init() {
+        if (!Popup::init(300.f, 190.f)) return false;
+
         this->setTitle("Fake Login");
 
         m_userInput = TextInput::create(220.f, "Fake username");
@@ -58,11 +61,11 @@ protected:
 public:
     static FakeLoginPopup* create() {
         auto ret = new FakeLoginPopup();
-        if (ret->initAnchored(300.f, 190.f)) {
+        if (ret->init()) {
             ret->autorelease();
             return ret;
         }
-        CC_SAFE_DELETE(ret);
+        delete ret;
         return nullptr;
     }
 };
